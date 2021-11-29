@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Distro.Ordering.DataAccess\Distro.Ordering.DataAccess.csproj" />
     <ProjectReference Include="..\Distro.Ordering.Domain\Distro.Ordering.Domain.csproj" />
-    <ProjectReference Include="..\Distro.Seedworks.DataAccess\Distro.Seedworks.DataAccess\Distro.Seedworks.DataAccess.csproj" />
     <ProjectReference Include="..\Distro.Seedworks.Instrumentation\Distro.Seedworks.Instrumentation\Distro.Seedworks.Instrumentation.csproj" />
   </ItemGroup>
 
