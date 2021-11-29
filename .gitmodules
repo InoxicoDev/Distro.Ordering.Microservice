@@ -1,0 +1,6 @@
+[submodule "Distro.Seedworks.DataAccess"]
+	path = Distro.Seedworks.DataAccess
+	url = https://github.com/InoxicoDev/Distro.Seedworks.DataAccess.git
+[submodule "Distro.Seedworks.Instrumentation"]
+	path = Distro.Seedworks.Instrumentation
+	url = https://github.com/InoxicoDev/Distro.Seedworks.Instrumentation.git
