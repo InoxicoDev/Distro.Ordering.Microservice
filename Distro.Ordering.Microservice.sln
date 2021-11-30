@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Distro.Ordering.Distributio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Distro.Ordering.Domain.Services", "Distro.Ordering.Domain.Services\Distro.Ordering.Domain.Services.csproj", "{69915422-167D-478E-A50A-A49D99D0DFC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Distro.Ordering.DataAccess", "Distro.Ordering.DataAccess\Distro.Ordering.DataAccess.csproj", "{F4F19326-81AC-4AEC-AB8D-960B679D489B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Distro.Ordering.DataAccess", "Distro.Ordering.DataAccess\Distro.Ordering.DataAccess.csproj", "{F4F19326-81AC-4AEC-AB8D-960B679D489B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Distro.Ordering.Domain.Contracts", "Distro.Ordering.Domain.Contracts\Distro.Ordering.Domain.Contracts.csproj", "{69437C10-3DB6-4540-A552-F7B7A2468910}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Distro.Seedworks.Domain", "Distro.Seedworks.Domain\Distro.Seedworks.Domain\Distro.Seedworks.Domain.csproj", "{5D691E58-30A1-4CCE-9F48-13CA4096DDBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +65,14 @@ Global
 		{F4F19326-81AC-4AEC-AB8D-960B679D489B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4F19326-81AC-4AEC-AB8D-960B679D489B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4F19326-81AC-4AEC-AB8D-960B679D489B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69437C10-3DB6-4540-A552-F7B7A2468910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69437C10-3DB6-4540-A552-F7B7A2468910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69437C10-3DB6-4540-A552-F7B7A2468910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69437C10-3DB6-4540-A552-F7B7A2468910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D691E58-30A1-4CCE-9F48-13CA4096DDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D691E58-30A1-4CCE-9F48-13CA4096DDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D691E58-30A1-4CCE-9F48-13CA4096DDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D691E58-30A1-4CCE-9F48-13CA4096DDBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +85,8 @@ Global
 		{AAC3C317-00DA-4C38-B655-C7E0A14FD557} = {04F8C25A-49ED-436C-8154-7680B1533984}
 		{69915422-167D-478E-A50A-A49D99D0DFC3} = {9F5FB19B-4AF7-48A7-B83E-9AC36090AA52}
 		{F4F19326-81AC-4AEC-AB8D-960B679D489B} = {04922E6D-9798-4E57-A7B9-ACFE080949B4}
+		{69437C10-3DB6-4540-A552-F7B7A2468910} = {9F5FB19B-4AF7-48A7-B83E-9AC36090AA52}
+		{5D691E58-30A1-4CCE-9F48-13CA4096DDBB} = {9F5FB19B-4AF7-48A7-B83E-9AC36090AA52}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0F78FE9D-623C-4F93-B583-A03DE3B36F50}

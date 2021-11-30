@@ -4,3 +4,6 @@
 [submodule "Distro.Seedworks.Instrumentation"]
 	path = Distro.Seedworks.Instrumentation
 	url = https://github.com/InoxicoDev/Distro.Seedworks.Instrumentation.git
+[submodule "Distro.Seedworks.Domain"]
+	path = Distro.Seedworks.Domain
+	url = https://github.com/InoxicoDev/Distro.Seedworks.Domain.git
