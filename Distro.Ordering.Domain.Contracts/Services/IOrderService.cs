@@ -1,5 +1,5 @@
 ﻿
-using Distro.Ordering.Domain.Common.Entities;
+using Distro.Ordering.Domain.Entities;
 using Distro.Seedworks.Infrastructure.Domain;
 
 namespace Distro.Ordering.Domain.Contracts.Services

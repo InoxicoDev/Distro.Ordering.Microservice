@@ -3,7 +3,7 @@ using Distro.Ordering.Domain.Behaviors;
 using Distro.Seedworks.Infrastructure.DataAccess;
 using Distro.Seedworks.Infrastructure.Domain;
 
-namespace Distro.Ordering.Domain.Common.Entities
+namespace Distro.Ordering.Domain.Entities
 {
     public class Order : EntityBase<OrderBehaviors>, IDatabaseEntity
     {

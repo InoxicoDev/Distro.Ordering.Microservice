@@ -1,10 +1,5 @@
-﻿using Distro.Ordering.Domain.Contracts.Entities;
-using Distro.Ordering.Domain.Contracts.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Distro.Ordering.Domain.Contracts.Services;
+using Distro.Ordering.Domain.Entities;
 
 namespace Distro.Ordering.Domain.Services.Services
 {

@@ -1,6 +1,4 @@
-﻿
-
-using Distro.Ordering.Domain.Common.Entities;
+﻿using Distro.Ordering.Domain.Entities;
 
 namespace Distro.Ordering.Domain.Behaviors
 {

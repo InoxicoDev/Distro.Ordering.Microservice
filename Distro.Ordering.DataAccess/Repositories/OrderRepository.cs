@@ -1,4 +1,4 @@
-﻿using Distro.Ordering.Domain.Contracts.Entities;
+﻿using Distro.Ordering.Domain.Entities;
 using Distro.Seedworks.Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore;
 

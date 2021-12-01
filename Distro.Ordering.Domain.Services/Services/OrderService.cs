@@ -1,4 +1,4 @@
-﻿using Distro.Ordering.Domain.Common.Entities;
+﻿using Distro.Ordering.Domain.Entities;
 using Distro.Ordering.Domain.Contracts.Repositories;
 using Distro.Ordering.Domain.Contracts.Services;
 using Distro.Ordering.Domain.Behaviors;
