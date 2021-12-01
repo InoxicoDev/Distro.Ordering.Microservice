@@ -1,23 +1,40 @@
-﻿using Distro.Ordering.Domain.Contracts.Entities;
+﻿using Distro.Ordering.Domain.Common.Entities;
+using Distro.Ordering.Domain.Contracts.Repositories;
 using Distro.Ordering.Domain.Contracts.Services;
+using Distro.Ordering.Domain.Behaviors;
 
 namespace Distro.Seedworks.Domain.Services
 {
     public class OrderService : IOrderService
     {
-        public Order AddOrder(Order order)
+        private readonly IOrderRepository _orderRepository;
+
+        public OrderService(IOrderRepository orderRepository)
         {
-            throw new NotImplementedException();
+            _orderRepository = orderRepository;
         }
 
-        public Order GetOrderById()
+        public Order AddOrder(Order order)
         {
-            throw new NotImplementedException();
+            _orderRepository.Add(order);
+
+            return order;
+        }
+
+        public Order GetOrderById(Guid id)
+        {
+            var order = _orderRepository.GetById(id);
+
+            return order;
         }
 
         public Order UpdateOrder(Order order)
         {
-            throw new NotImplementedException();
+            var existingOrder = _orderRepository.GetById(order.Id);
+
+            existingOrder?.Behaviors?.Update(order);
+
+            return existingOrder;
         }
     }
 }

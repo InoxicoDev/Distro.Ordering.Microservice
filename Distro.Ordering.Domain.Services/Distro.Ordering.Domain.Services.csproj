@@ -10,7 +10,6 @@
     <ProjectReference Include="..\Distro.Ordering.DataAccess\Distro.Ordering.DataAccess.csproj" />
     <ProjectReference Include="..\Distro.Ordering.Domain.Contracts\Distro.Ordering.Domain.Contracts.csproj" />
     <ProjectReference Include="..\Distro.Ordering.Domain\Distro.Ordering.Domain.csproj" />
-    <ProjectReference Include="..\Distro.Seedworks.Instrumentation\Distro.Seedworks.Instrumentation\Distro.Seedworks.Instrumentation.csproj" />
   </ItemGroup>
 
 </Project>
