@@ -19,5 +19,8 @@ namespace Distro.Ordering.Domain.Behaviors
             original.Parent.OrderNumberWrapper = updatedOrder.OrderNumberWrapper;
             original.Parent.Price = updatedOrder.Price;
         }
+        public static void Add(this OrderBehaviors original, Order updatedOrder)
+        {            
+        }
     }
 }

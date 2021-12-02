@@ -16,22 +16,21 @@ namespace Distro.Seedworks.Domain.Services
 
         public Order AddOrder(Order order)
         {
-            _orderRepository.Add(order);
+            var addedOrder = _orderRepository.Add(order);
+            addedOrder?.Behaviors?.Add(order);
 
-            return order;
+            return addedOrder;
         }
 
         public Order GetOrderById(Guid id)
         {
             var order = _orderRepository.GetById(id);
-
             return order;
         }
 
         public Order UpdateOrder(Order order)
         {
             var existingOrder = _orderRepository.GetById(order.Id);
-
             existingOrder?.Behaviors?.Update(order);
 
             return existingOrder;
