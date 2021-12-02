@@ -1,7 +1,7 @@
 ﻿using Distro.Ordering.Domain.Entities;
-using Distro.Ordering.Domain.Contracts.Repositories;
 using Distro.Ordering.Domain.Contracts;
 using Distro.Ordering.Domain.Behaviors;
+using Distro.Ordering.Domain.Services.Contracts.Repositories;
 
 namespace Distro.Seedworks.Domain.Services
 {
