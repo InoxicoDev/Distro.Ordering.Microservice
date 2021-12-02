@@ -5,7 +5,7 @@ namespace Distro.Ordering.Domain.Services.Services
 {
     public class OrderHistoryService : IOrderHistoryService
     {
-        public IEnumerable<Order> GetOrderHistoryByCustomer(Guid customerId)
+        public IEnumerable<Order> GetOrderHistory(Guid customerId)
         {
             throw new NotImplementedException();
         }

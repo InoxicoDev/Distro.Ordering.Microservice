@@ -6,7 +6,7 @@ namespace Distro.Ordering.Domain.Contracts
 {
     public interface IOrderService : IDomainService
     {
-        public Order GetOrderById(Guid Id);
+        public Order? GetOrderById(Guid Id);
 
         public Order AddOrder(Order order);
 

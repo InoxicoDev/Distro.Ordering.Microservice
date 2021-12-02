@@ -5,6 +5,6 @@ namespace Distro.Ordering.Domain.Contracts
 {
     public interface IOrderHistoryService : IDomainService
     {
-        public IEnumerable<Order> GetOrderHistoryByCustomer(Guid customerId);
+        public IEnumerable<Order> GetOrderHistory(Guid customerId);
     }
 }

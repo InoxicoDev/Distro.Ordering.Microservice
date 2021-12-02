@@ -19,7 +19,6 @@ namespace Distro.Ordering.DataAccess
 
             // Ignore the Value Object only persist the value
             builder.Entity<Order>().Ignore(v => v.OrderNumber);
-
         }
     }
 }
