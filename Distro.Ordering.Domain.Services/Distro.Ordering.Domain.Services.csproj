@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Distro.Ordering.DataAccess\Distro.Ordering.DataAccess.csproj" />
     <ProjectReference Include="..\Distro.Ordering.Domain\Distro.Ordering.Domain.csproj" />
+    <ProjectReference Include="..\Distro.Seedworks.Infrastructure\Distro.Seedworks.Infrastructure\Distro.Seedworks.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
