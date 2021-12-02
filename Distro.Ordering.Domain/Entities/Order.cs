@@ -20,5 +20,7 @@ namespace Distro.Ordering.Domain.Entities
         public OrderNumber? OrderNumberWrapper { get; set; }
 
         public decimal? Price { get; set; }
+
+        public Guid CustomerId { get; set; }
     }
 }
