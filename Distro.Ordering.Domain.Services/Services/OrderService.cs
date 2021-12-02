@@ -1,17 +1,17 @@
 ﻿using Distro.Ordering.Domain.Entities;
 using Distro.Ordering.Domain.Contracts;
 using Distro.Ordering.Domain.Behaviors;
-using Distro.Ordering.Domain.Services.Contracts.Repositories;
+using Distro.Seedworks.Infrastructure.DataAccess;
 
 namespace Distro.Seedworks.Domain.Services
 {
     public class OrderService : IOrderService
     {
-        private readonly IOrderRepository _orderRepository;
+        private IRepository<Order> _orderRepository;
 
-        public OrderService(IOrderRepository orderRepository)
+        public OrderService(IRepository<Order> repository)
         {
-            _orderRepository = orderRepository;
+            _orderRepository = repository;
         }
 
         public Order AddOrder(Order order)
