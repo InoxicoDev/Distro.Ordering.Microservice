@@ -1,6 +1,6 @@
 ﻿using Distro.Ordering.Domain.Entities;
 using Distro.Ordering.Domain.Contracts.Repositories;
-using Distro.Ordering.Domain.Contracts.Services;
+using Distro.Ordering.Domain.Contracts;
 using Distro.Ordering.Domain.Behaviors;
 
 namespace Distro.Seedworks.Domain.Services

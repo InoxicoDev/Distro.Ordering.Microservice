@@ -16,6 +16,10 @@ namespace Distro.Ordering.DataAccess
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            // Ignore the Value Object only persist the value
+            builder.Entity<Order>().Ignore(v => v.OrderNumber);
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Distro.Ordering.Domain.Contracts.Services;
+﻿using Distro.Ordering.Domain.Contracts;
 using Distro.Ordering.Domain.Entities;
 
 namespace Distro.Ordering.Domain.Services.Services
