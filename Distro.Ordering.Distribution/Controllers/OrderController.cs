@@ -55,6 +55,7 @@ namespace Distro.Ordering.Distribution.Controllers
                 logger.Info($"Test logging Controller");
 
                 addedOrder = _orderService.AddOrder(order);
+                context.SaveChanges();
 
                 ts.Complete();
             }
@@ -78,6 +79,7 @@ namespace Distro.Ordering.Distribution.Controllers
                 logger.Info($"Test logging Controller");
 
                 updatedOrder = _orderService.UpdateOrder(order);
+                context.SaveChanges();
 
                 ts.Complete();
             }
