@@ -17,7 +17,7 @@ namespace Distro.Seedworks.Domain.Services
         public Order AddOrder(Order order)
         {
             var addedOrder = _orderRepository.Add(order);
-            addedOrder?.Behaviors?.Add(order);
+            addedOrder?.Behaviors()?.Add(order);
 
             return addedOrder;
         }
@@ -31,7 +31,7 @@ namespace Distro.Seedworks.Domain.Services
         public Order UpdateOrder(Order order)
         {
             var existingOrder = _orderRepository.GetById(order.Id);
-            existingOrder?.Behaviors?.Update(order);
+            existingOrder?.Behaviors()?.Update(order);
 
             return existingOrder;
         }

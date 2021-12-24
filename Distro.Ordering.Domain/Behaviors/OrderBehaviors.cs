@@ -12,8 +12,13 @@ namespace Distro.Ordering.Domain.Behaviors
         }
     }
 
-    public static class OrderBehaviorsExtensions
+    public static class OrderExtensions
     {
+        public static OrderBehaviors Behaviors(this Order original)
+        {
+            return new OrderBehaviors(original);
+        }
+
         public static void Update(this OrderBehaviors original, Order updatedOrder)
         {
             original.Parent.OrderNumberWrapper = updatedOrder.OrderNumberWrapper;
