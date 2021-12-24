@@ -12,18 +12,6 @@ namespace Distro.Ordering.Tests
 
         public DatabaseContextTests() : base("DefaultConnection")
         {
-
-            //IConfigurationRoot configuration = new ConfigurationBuilder()
-            //    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-            //    .AddJsonFile("appsettings.json")
-            //    .Build();
-
-            //var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            //optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
-                   
-            //_context = new ApplicationDbContext(optionsBuilder.Options);
-            //_transaction = new TransactionScope(TransactionScopeOption.RequiresNew, TimeSpan.MaxValue);
-
             _orderRepo = new OrderRepository(_context);
         }
 
