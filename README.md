@@ -35,7 +35,7 @@ git pull
 
 **General Microservice Design**
 - [ ] Data Services ([Crud Rest vs Data Streams](https://www.confluent.io/blog/data-dichotomy-rethinking-the-way-we-treat-data-and-services/))
-- [ ] API Gateway orchestration of Application Services REST implimentations
+- [ ] API Gateway orchestration of Application Services REST implimentations (Example [Envoy](https://www.envoyproxy.io/) or Ocelot)
 - [ ] [Specification pattern](https://www.nuget.org/packages/Ardalis.Specification) implimentation (Decouple query construction from Data Access layer)
 - [ ] Split testing into Functional, Integration and Unit Testing (Decent mocking / Stubbing capability) 
 
