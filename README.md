@@ -19,6 +19,7 @@ git pull
 **Not in scope**
 - Security (Assume OAuth JWT with Identity Server)
 - Inter Bounded Context communication (ESB)
+- Cloud logging and visualization (Assume ELK)
 
 **Clean Architecture Design**
 - [X] Use clean Use Case defnitions to show capability of microservice (Application Service Interfaces)
