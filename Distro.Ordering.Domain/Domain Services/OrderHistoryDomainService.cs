@@ -15,7 +15,7 @@ namespace Distro.Ordering.Domain.Domain_Services
 
         public IEnumerable<Order> DelayPendingOrdersWithSpecificItem(Guid orderItemId, int days)
         {
-            // Ensure the order item exists
+            var orderItem = OrderRepository.GetById(orderItemId);
 
             // Search for all orders not completed that contains that order ID
 

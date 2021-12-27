@@ -1,12 +1,11 @@
 ﻿
 using Distro.Ordering.Domain.Behaviors;
-using Distro.Ordering.Domain.ValueObjects;
 using Distro.Seedworks.Infrastructure.DataAccess;
 using Distro.Seedworks.Infrastructure.Domain;
 
 namespace Distro.Ordering.Domain.Entities
 {
-    public class Order : EntityBase<OrderBehaviors>, IDatabaseEntity
+    public class Order : EntityBase<OrderBehaviours>, IDatabaseEntity, IAggregateRoot
     {
         public Guid Id { get; set; }
 
@@ -20,5 +19,7 @@ namespace Distro.Ordering.Domain.Entities
         public DateTime DueDate { get; set; }
 
         public bool IsCompleted { get; set; }
+
+        public virtual ICollection<OrderItem> Items { get; set; }
     }
 }

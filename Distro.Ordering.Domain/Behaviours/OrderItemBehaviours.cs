@@ -10,15 +10,15 @@ namespace Distro.Ordering.Domain.Behaviors
 {
     public static class OrderItemExtention
     {
-        public static OrderItemBehaviors Behaviors(this OrderItem original)
+        public static OrderItemBehaviours Behaviors(this OrderItem original)
         {
-            return new OrderItemBehaviors(original);
+            return new OrderItemBehaviours(original);
         }
     }
 
-    public class OrderItemBehaviors : EntityBehaviorBase<OrderItem>
+    public class OrderItemBehaviours : EntityBehaviourBase<OrderItem>
     {
-        public OrderItemBehaviors(OrderItem domainEntity) : base(domainEntity)
+        public OrderItemBehaviours(OrderItem domainEntity) : base(domainEntity)
         {
         }
 
