@@ -1,6 +1,7 @@
 ﻿using Distro.Ordering.DataAccess;
 using Distro.Ordering.Domain.Contracts;
 using Distro.Ordering.Domain.Entities;
+using Distro.Seedworks.Domain.Services;
 using Distro.Seedworks.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using System.Transactions;
@@ -13,13 +14,13 @@ namespace Distro.Ordering.Distribution.Controllers
     {
         IOrderService? _orderService;
 
-        public OrderController(ApplicationDbContext dbContext, IOrderService? service = null) : base(dbContext)
-        {
-            _orderService = service;
-        }
-
-        public ApplicationDbContext context { get; set; }
         public LogWriter logger { get; set; }
+
+        public OrderController(ApplicationDbContext dbContext) : base(dbContext)
+        {
+            _orderService = new OrderService(dbContext);
+            logger = new LogWriter();
+        }
 
         [HttpGet("GetOrderById/{id}")]
         public Order? GetOrderById(Guid Id)

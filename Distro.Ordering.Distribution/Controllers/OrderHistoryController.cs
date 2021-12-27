@@ -1,6 +1,7 @@
 ﻿using Distro.Ordering.DataAccess;
 using Distro.Ordering.Domain.Contracts;
 using Distro.Ordering.Domain.Entities;
+using Distro.Ordering.Domain.Services.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Transactions;
 
@@ -12,9 +13,9 @@ namespace Distro.Ordering.Distribution.Controllers
     {
         IOrderHistoryService? _orderHistoryService;
 
-        public OrderHistoryController(ApplicationDbContext dbContext, IOrderHistoryService? historyService = null) : base(dbContext)
+        public OrderHistoryController(ApplicationDbContext dbContext) : base(dbContext)
         {
-            _orderHistoryService = historyService;
+            _orderHistoryService = new OrderHistoryService(dbContext);
         }
 
         [HttpGet("GetOrderHistory/{id}")]

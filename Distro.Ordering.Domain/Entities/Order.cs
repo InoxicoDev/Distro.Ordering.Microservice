@@ -10,14 +10,8 @@ namespace Distro.Ordering.Domain.Entities
     {
         public Guid Id { get; set; }
 
-        public int? OrderNumber
-        {
-            get => OrderNumberWrapper?.GetValue();
-        }
-
-        //TODO: Ensure this is populated from oder number field at load
-        //TODO: Ensure there is only one field in swagger and that it is loaded through the value object
-        public OrderNumber? OrderNumberWrapper { get; set; }
+        // Investigate a value object wrapper for Order Number
+        public string OrderNumber { get; set; }
 
         public decimal? Price { get; set; }
 

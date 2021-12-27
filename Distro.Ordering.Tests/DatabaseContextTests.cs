@@ -1,7 +1,10 @@
 using Distro.Ordering.DataAccess;
 using Distro.Ordering.DataAccess.Repositories;
+using Distro.Ordering.Domain.Entities;
 using Distro.Ordering.Tests.Builders;
 using Distro.Seedworks.Infrastructure.DataAccess;
+using System;
+using System.Transactions;
 using Xunit;
 
 namespace Distro.Ordering.Tests
@@ -15,7 +18,6 @@ namespace Distro.Ordering.Tests
             _orderRepo = new OrderRepository(_context);
         }
 
-
         [Fact(Skip = "This is an sample test")]
         public void SampleTest()
         {
@@ -27,8 +29,17 @@ namespace Distro.Ordering.Tests
         [Fact]
         public void DatabaseAddTest()
         {
-            var newOrder = new OrderBuilder().SampleOrder().Build();
-            var response = _orderRepo.Add(newOrder);
+            Order? response = null;
+
+            using (var scope = new TransactionScope(TransactionScopeOption.RequiresNew, TimeSpan.MaxValue, TransactionScopeAsyncFlowOption.Enabled))
+            {
+                var newOrder = new OrderBuilder().SampleOrder().Build();
+                response = _orderRepo.Add(newOrder);
+                _context.SaveChanges();
+
+                scope.Dispose();
+            }
+
             Assert.NotNull(response);
         }
     }

@@ -2,6 +2,8 @@
 using Distro.Ordering.Domain.Contracts;
 using Distro.Ordering.Domain.Behaviors;
 using Distro.Seedworks.Infrastructure.DataAccess;
+using Distro.Ordering.DataAccess;
+using Distro.Ordering.DataAccess.Repositories;
 
 namespace Distro.Seedworks.Domain.Services
 {
@@ -9,9 +11,9 @@ namespace Distro.Seedworks.Domain.Services
     {
         private IRepository<Order> _orderRepository;
 
-        public OrderService(IRepository<Order> repository)
+        public OrderService(ApplicationDbContext context)
         {
-            _orderRepository = repository;
+            _orderRepository = new OrderRepository(context);
         }
 
         public Order AddOrder(Order order)

@@ -1,3 +1,11 @@
+using Distro.Ordering.DataAccess;
+using Distro.Ordering.DataAccess.Repositories;
+using Distro.Ordering.Domain.Contracts;
+using Distro.Ordering.Domain.Entities;
+using Distro.Seedworks.Domain.Services;
+using Distro.Seedworks.Infrastructure.DataAccess;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +14,16 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// EF Configuration
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connectionString));
+
+
+// DI Configuration
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
+
 
 var app = builder.Build();
 
