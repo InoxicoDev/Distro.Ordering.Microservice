@@ -30,7 +30,7 @@ git pull
 - [X] Domain Services (Entity orchestration and complex domain logic)
 - [ ] Domain Event Handeling (Sync/A-Sync with unit of work rollback) [[MediatR](https://medium.com/dotnet-hub/use-mediatr-in-asp-net-or-asp-net-core-cqrs-and-mediator-in-dotnet-how-to-use-mediatr-cqrs-aspnetcore-5076e2f2880c) or RabbitMQ?]
 - [X] Ensure valid state - Side affects through domain events (Unit of Work Pattern, shared database context)
-- [ ] Ensure valid state - Use [value objects](src/Clean.Architecture.SharedKernel/ValueObject.cs) to ensure entities cannot be set in an invalid state
+- [ ] Ensure valid state - Use [value objects](src/Clean.Architecture.SharedKernel/ValueObject.cs) to ensure entities cannot be set in an invalid state, imutable history of values can be a subset of an entity object can have behaviors e.g. Product Code or Invoice Number that requires special formats and sequencing
 - [ ] CQRS (Command & Query) Data Access Implimentation
 
 **General Microservice Design**
