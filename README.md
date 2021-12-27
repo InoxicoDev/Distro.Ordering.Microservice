@@ -45,3 +45,9 @@ git pull
 - [ ] Dependancy health check during deployment
 
 ![alt text](https://github.com/InoxicoDev/Distro.Portal.WebApplication/blob/main/Resources/Conceptual%20Architecture.png?raw=true)
+
+## Important Resources
+- [Clean Architecture Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [Sample Clean Architecture Microservice](https://github.com/ardalis/CleanArchitecture) by Ardelas
+
+
