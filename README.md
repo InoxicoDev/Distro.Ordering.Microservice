@@ -14,7 +14,7 @@ git pull
 ```
 
 4. Open "Package Manager Console" and select "Distro.Ordering.DataAccess" and run `Update-Database`
-5. Remove the skip anotation from the 'DatabaseInitializationTests.cs' > InitializeDatabaseWithSampleData
+5. Remove the skip anotation from the 'DatabaseInitializationTests.cs' > InitializeDatabaseWithSampleData and run for population
 
 **Not in scope**
 - Security (Assume OAuth JWT with Identity Server)
