@@ -21,7 +21,7 @@ namespace Distro.Ordering.Tests
         }
 
         [Fact(Skip = "This is an sample test")]
-        public void SampleTest()
+        public void InitializeDatabaseWithSampleData()
         {
             using (var scope = new TransactionScope(TransactionScopeOption.RequiresNew, TimeSpan.MaxValue, TransactionScopeAsyncFlowOption.Enabled))
             {
