@@ -18,17 +18,18 @@ namespace Distro.Ordering.Distribution.Controllers
             _orderHistoryService = new OrderHistoryService(dbContext);
         }
 
-        [HttpGet("GetOrderHistory/{id}")]
-        public IEnumerable<Order> GetOrderHistory(Guid customerId)
+
+        [HttpPost("DelayPendingOrdersWithSpecificItem")]
+        public IEnumerable<Order> DelayPendingOrdersWithSpecificItem(Guid orderItemId, int days)
         {
-            IEnumerable<Order> orderHistory;
+            IEnumerable<Order> result;
 
             try
             {
                 using TransactionScope ts = new TransactionScope(TransactionScopeOption.Required, TransactionScopeAsyncFlowOption.Enabled);
                 logger.Info($"Test logging Controller");
 
-                orderHistory = _orderHistoryService?.GetOrderHistory(customerId) ?? new List<Order>();
+                result = _orderHistoryService?.DelayPendingOrdersWithSpecificItem(orderItemId, days);
 
                 ts.Complete();
             }
@@ -38,7 +39,30 @@ namespace Distro.Ordering.Distribution.Controllers
                 throw;
             }
 
-            return orderHistory;
+            return result;
+        }
+
+        [HttpGet("GetOrderHistory/{id}")]
+        public IEnumerable<Order> GetOrderHistory(Guid customerId)
+        {
+            IEnumerable<Order> result;
+
+            try
+            {
+                using TransactionScope ts = new TransactionScope(TransactionScopeOption.Required, TransactionScopeAsyncFlowOption.Enabled);
+                logger.Info($"Test logging Controller");
+
+                result = _orderHistoryService?.GetOrderHistory(customerId) ?? new List<Order>();
+
+                ts.Complete();
+            }
+            catch (Exception e)
+            {
+                logger.Error(e);
+                throw;
+            }
+
+            return result;
         }
     }
 }

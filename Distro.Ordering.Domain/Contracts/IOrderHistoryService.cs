@@ -6,5 +6,7 @@ namespace Distro.Ordering.Domain.Contracts
     public interface IOrderHistoryService : IApplicationService
     {
         public IEnumerable<Order> GetOrderHistory(Guid customerId);
+
+        public IEnumerable<Order> DelayPendingOrdersWithSpecificItem(Guid orderItemId, int days);
     }
 }

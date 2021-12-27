@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Distro.Ordering.Domain\Distro.Ordering.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

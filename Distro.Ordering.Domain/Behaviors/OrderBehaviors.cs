@@ -21,9 +21,20 @@ namespace Distro.Ordering.Domain.Behaviors
         {
             DomainEntity.OrderNumber = updatedOrder.OrderNumber;
             DomainEntity.Price = updatedOrder.Price;
+
+            // Raise update event
         }
         public void Add(Order updatedOrder)
         {
+        }
+
+        public void DelayDelivery(int days)
+        {
+            if (DomainEntity.IsCompleted) throw new InvalidOperationException("Cannot delay an order that is already completed");
+
+            DomainEntity.DueDate = DomainEntity.DueDate.AddDays(days);
+
+            // Raise delay event
         }
     }
 }

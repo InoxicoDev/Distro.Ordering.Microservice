@@ -16,5 +16,9 @@ namespace Distro.Ordering.Domain.Entities
         public decimal? Price { get; set; }
 
         public Guid CustomerId { get; set; }
+
+        public DateTime DueDate { get; set; }
+
+        public bool IsCompleted { get; set; }
     }
 }

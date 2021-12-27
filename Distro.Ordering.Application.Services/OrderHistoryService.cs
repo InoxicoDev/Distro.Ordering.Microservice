@@ -1,8 +1,9 @@
 ﻿using Distro.Ordering.DataAccess;
 using Distro.Ordering.DataAccess.Repositories;
 using Distro.Ordering.Domain.Contracts;
+using Distro.Ordering.Domain.Contracts.Repositories;
+using Distro.Ordering.Domain.Domain_Services;
 using Distro.Ordering.Domain.Entities;
-using Distro.Seedworks.Infrastructure.DataAccess;
 
 namespace Distro.Ordering.Application.Services
 {
@@ -15,11 +16,19 @@ namespace Distro.Ordering.Application.Services
     /// </summary>
     public class OrderHistoryService : IOrderHistoryService
     {
-        private IRepository<Order> _orderRepository;
+        private IOrderRepository _orderRepository;
 
         public OrderHistoryService(ApplicationDbContext context)
         {
             _orderRepository = new OrderRepository(context);
+        }
+
+        // More complex domain operations need to be managed through domain services
+        public IEnumerable<Order> DelayPendingOrdersWithSpecificItem(Guid orderItemId, int days)
+        {
+            var domainService = new OrderHistoryDomainService(_orderRepository);
+
+            return domainService.DelayPendingOrdersWithSpecificItem(orderItemId, days);
         }
 
         public IEnumerable<Order> GetOrderHistory(Guid customerId)
