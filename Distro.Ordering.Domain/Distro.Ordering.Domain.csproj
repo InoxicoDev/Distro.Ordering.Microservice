@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Distro.Seedworks.Infrastructure\Distro.Seedworks.Infrastructure\Distro.Seedworks.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Domain Services\" />
+  </ItemGroup>
+
 </Project>

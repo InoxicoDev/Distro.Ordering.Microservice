@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Distro.Ordering.Application.Services\Distro.Ordering.Application.Services.csproj" />
     <ProjectReference Include="..\Distro.Ordering.DataAccess\Distro.Ordering.DataAccess.csproj" />
-    <ProjectReference Include="..\Distro.Ordering.Domain.Services\Distro.Ordering.Domain.Services.csproj" />
     <ProjectReference Include="..\Distro.Ordering.Domain\Distro.Ordering.Domain.csproj" />
   </ItemGroup>
 

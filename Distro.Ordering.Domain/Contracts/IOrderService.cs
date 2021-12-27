@@ -4,7 +4,7 @@ using Distro.Seedworks.Infrastructure.Domain;
 
 namespace Distro.Ordering.Domain.Contracts
 {
-    public interface IOrderService : IDomainService
+    public interface IOrderService : IApplicationService
     {
         public Order? GetOrderById(Guid Id);
 

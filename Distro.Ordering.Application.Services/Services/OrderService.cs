@@ -5,8 +5,15 @@ using Distro.Seedworks.Infrastructure.DataAccess;
 using Distro.Ordering.DataAccess;
 using Distro.Ordering.DataAccess.Repositories;
 
-namespace Distro.Seedworks.Domain.Services
+namespace Distro.Ordering.Application.Services
 {
+    /// <summary>
+    /// !!! No domain logic !!!
+    /// In Clean Architecture this is the User Story entry definitions,in DDD the logic resides in the domain one level lower.
+    /// (a) Search for entities through repo
+    /// (a) Interact with a specific entity through its behaviors
+    /// (b) Call a domain service to more complex domain opperations
+    /// </summary>
     public class OrderService : IOrderService
     {
         private IRepository<Order> _orderRepository;

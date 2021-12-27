@@ -1,9 +1,4 @@
 using Distro.Ordering.DataAccess;
-using Distro.Ordering.DataAccess.Repositories;
-using Distro.Ordering.Domain.Contracts;
-using Distro.Ordering.Domain.Entities;
-using Distro.Seedworks.Domain.Services;
-using Distro.Seedworks.Infrastructure.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,11 +14,9 @@ builder.Services.AddSwaggerGen();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connectionString));
 
-
-// DI Configuration
-builder.Services.AddScoped<IOrderService, OrderService>();
-builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
-
+// DI Configuration (Removed for not to allow for unit of work implimentation)
+// builder.Services.AddScoped<IOrderService, OrderService>();
+// builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
 
 var app = builder.Build();
 

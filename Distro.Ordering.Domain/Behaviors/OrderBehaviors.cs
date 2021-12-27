@@ -1,31 +1,29 @@
 ﻿using Distro.Ordering.Domain.Entities;
+using Distro.Seedworks.Infrastructure.Domain;
 
 namespace Distro.Ordering.Domain.Behaviors
 {
-    public class OrderBehaviors
-    {
-        public Order Parent { get; set; }
-
-        public OrderBehaviors(Order entity)
-        {
-            Parent = entity;
-        }
-    }
-
-    public static class OrderExtensions
+    public static class OrderExtention
     {
         public static OrderBehaviors Behaviors(this Order original)
         {
             return new OrderBehaviors(original);
         }
+    }
 
-        public static void Update(this OrderBehaviors original, Order updatedOrder)
+    public class OrderBehaviors : EntityBehaviorBase<Order>
+    {
+        public OrderBehaviors(Order domainEntity) : base(domainEntity)
         {
-            original.Parent.OrderNumber = updatedOrder.OrderNumber;
-            original.Parent.Price = updatedOrder.Price;
         }
-        public static void Add(this OrderBehaviors original, Order updatedOrder)
-        {            
+
+        public void Update(Order updatedOrder)
+        {
+            DomainEntity.OrderNumber = updatedOrder.OrderNumber;
+            DomainEntity.Price = updatedOrder.Price;
+        }
+        public void Add(Order updatedOrder)
+        {
         }
     }
 }
