@@ -1,6 +1,6 @@
 ﻿using Distro.Ordering.Domain.Entities;
 using Distro.Ordering.Domain.Contracts;
-using Distro.Ordering.Domain.Behaviors;
+using Distro.Ordering.Domain.Behaviours;
 using Distro.Seedworks.Infrastructure.DataAccess;
 using Distro.Ordering.DataAccess;
 using Distro.Ordering.DataAccess.Repositories;
@@ -26,7 +26,7 @@ namespace Distro.Ordering.Application.Services
         public Order AddOrder(Order order)
         {
             var addedOrder = _orderRepository.Add(order);
-            addedOrder?.Behaviors()?.Add(order);
+            addedOrder?.Behaviours()?.Add(order);
 
             return addedOrder;
         }
@@ -40,7 +40,7 @@ namespace Distro.Ordering.Application.Services
         public Order UpdateOrder(Order order)
         {
             var existingOrder = _orderRepository.GetById(order.Id);
-            existingOrder?.Behaviors()?.Update(order);
+            existingOrder?.Behaviours()?.Update(order);
 
             return existingOrder;
         }

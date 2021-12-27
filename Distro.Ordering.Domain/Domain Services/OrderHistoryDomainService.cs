@@ -1,6 +1,7 @@
 ﻿using Distro.Ordering.Domain.Contracts.Repositories;
 using Distro.Ordering.Domain.Entities;
 using Distro.Seedworks.Infrastructure.Domain;
+using Distro.Ordering.Domain.Behaviours;
 
 namespace Distro.Ordering.Domain.Domain_Services
 {
@@ -8,20 +9,28 @@ namespace Distro.Ordering.Domain.Domain_Services
     {
         public IOrderRepository OrderRepository { get; set; }
 
-        public OrderHistoryDomainService(IOrderRepository repo)
+        public IProductRepository ProductRepository { get; set; }
+
+        public OrderHistoryDomainService(IOrderRepository orderRepo, IProductRepository productRepo)
         {
-            OrderRepository = repo;
+            OrderRepository = orderRepo;
+            ProductRepository = productRepo;
         }
 
-        public IEnumerable<Order> DelayPendingOrdersWithSpecificItem(Guid orderItemId, int days)
+        public IEnumerable<Order> DelayPendingOrdersWithSpecificProduct(string productCode, int days)
         {
-            var orderItem = OrderRepository.GetById(orderItemId);
+            var orderItem = ProductRepository.GetProductByCode(productCode);
 
-            // Search for all orders not completed that contains that order ID
+            var orders = OrderRepository.FindOrdersWithSpecificProduct(orderItem.Id);
 
-            // For each one found call their delay order behavior
+            var response = orders.Where(o => !o.IsCompleted); // Need to colapse this into a specification
 
-            throw new NotImplementedException();
+            foreach(var order in orders)
+            {
+                order.Behaviours().DelayDelivery(days);
+            }
+
+            return response;
         }
 
     }

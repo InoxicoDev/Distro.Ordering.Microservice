@@ -9,5 +9,10 @@ namespace Distro.Ordering.DataAccess.Repositories
         public ProductRepository(ApplicationDbContext dataContext) : base(dataContext)
         {
         }
+
+        public Product GetProductByCode(string productCode)
+        {
+            return _table.Where(t => t.ProductCode == productCode).FirstOrDefault();
+        }
     }
 }

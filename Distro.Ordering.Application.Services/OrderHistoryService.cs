@@ -17,18 +17,20 @@ namespace Distro.Ordering.Application.Services
     public class OrderHistoryService : IOrderHistoryService
     {
         private IOrderRepository _orderRepository;
+        private IProductRepository _productRepository;
 
         public OrderHistoryService(ApplicationDbContext context)
         {
             _orderRepository = new OrderRepository(context);
+            _productRepository = new ProductRepository(context);
         }
 
         // More complex domain operations need to be managed through domain services
-        public IEnumerable<Order> DelayPendingOrdersWithSpecificItem(Guid orderItemId, int days)
+        public IEnumerable<Order> DelayPendingOrdersWithSpecificProduct(string productCode, int days)
         {
-            var domainService = new OrderHistoryDomainService(_orderRepository);
+            var domainService = new OrderHistoryDomainService(_orderRepository, _productRepository);
 
-            return domainService.DelayPendingOrdersWithSpecificItem(orderItemId, days);
+            return domainService.DelayPendingOrdersWithSpecificProduct(productCode, days);
         }
 
         public IEnumerable<Order> GetOrderHistory(Guid customerId)

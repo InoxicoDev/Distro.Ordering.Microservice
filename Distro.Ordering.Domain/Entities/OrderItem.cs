@@ -1,4 +1,4 @@
-﻿using Distro.Ordering.Domain.Behaviors;
+﻿using Distro.Ordering.Domain.Behaviours;
 using Distro.Seedworks.Infrastructure.DataAccess;
 using Distro.Seedworks.Infrastructure.Domain;
 

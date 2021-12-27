@@ -20,7 +20,7 @@ namespace Distro.Ordering.Distribution.Controllers
 
 
         [HttpPost("DelayPendingOrdersWithSpecificItem")]
-        public IEnumerable<Order> DelayPendingOrdersWithSpecificItem(Guid orderItemId, int days)
+        public IEnumerable<Order> DelayPendingOrdersWithSpecificProduct(string productCode, int days)
         {
             IEnumerable<Order> result;
 
@@ -29,7 +29,8 @@ namespace Distro.Ordering.Distribution.Controllers
                 using TransactionScope ts = new TransactionScope(TransactionScopeOption.Required, TransactionScopeAsyncFlowOption.Enabled);
                 logger.Info($"Test logging Controller");
 
-                result = _orderHistoryService?.DelayPendingOrdersWithSpecificItem(orderItemId, days);
+                result = _orderHistoryService?.DelayPendingOrdersWithSpecificProduct(productCode, days);
+                context.SaveChanges();
 
                 ts.Complete();
             }

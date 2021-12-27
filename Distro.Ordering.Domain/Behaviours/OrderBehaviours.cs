@@ -1,11 +1,11 @@
 ﻿using Distro.Ordering.Domain.Entities;
 using Distro.Seedworks.Infrastructure.Domain;
 
-namespace Distro.Ordering.Domain.Behaviors
+namespace Distro.Ordering.Domain.Behaviours
 {
     public static class OrderExtention
     {
-        public static OrderBehaviours Behaviors(this Order original)
+        public static OrderBehaviours Behaviours(this Order original)
         {
             return new OrderBehaviours(original);
         }

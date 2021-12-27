@@ -9,5 +9,10 @@ namespace Distro.Ordering.DataAccess.Repositories
         public OrderRepository(ApplicationDbContext dataContext) : base(dataContext)
         {
         }
+
+        public IEnumerable<Order> FindOrdersWithSpecificProduct(Guid productId)
+        {
+            return _table.Where(t => t.Items.Any(x => x.ProductId == productId));
+        }
     }
 }

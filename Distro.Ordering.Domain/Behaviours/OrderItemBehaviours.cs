@@ -1,16 +1,11 @@
 ﻿using Distro.Ordering.Domain.Entities;
 using Distro.Seedworks.Infrastructure.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Distro.Ordering.Domain.Behaviors
+namespace Distro.Ordering.Domain.Behaviours
 {
     public static class OrderItemExtention
     {
-        public static OrderItemBehaviours Behaviors(this OrderItem original)
+        public static OrderItemBehaviours Behaviours(this OrderItem original)
         {
             return new OrderItemBehaviours(original);
         }
