@@ -49,5 +49,6 @@ git pull
 ## Important Resources
 - [Clean Architecture Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 - [Sample Clean Architecture Microservice](https://github.com/ardalis/CleanArchitecture) by Ardalis
+- [Sample Microservice Git Repository](https://github.com/mehmetozkaya/AspnetMicroservices/tree/main/src/Services/Ordering/Ordering.Application) from Microservice .Net [Udemy Course](https://www.udemy.com/share/103fFg3@Sdnt_AcFYl01YJfSn6FcZweRsyhC2MjF0MirCRz9xbUlrvERX45dMfAEl8lJPS3D/)
 
 
