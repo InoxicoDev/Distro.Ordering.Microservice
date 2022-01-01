@@ -33,9 +33,10 @@ git pull
 **DDD Design**
 - [X] *Domain Entities, Behaviors and Aggrigate Root Repositories
 - [X] *Domain Services (Entity orchestration and complex domain logic)
-- [ ] *Domain Event Handeling (Sync/A-Sync with unit of work rollback) [[MediatR](https://medium.com/dotnet-hub/use-mediatr-in-asp-net-or-asp-net-core-cqrs-and-mediator-in-dotnet-how-to-use-mediatr-cqrs-aspnetcore-5076e2f2880c) or RabbitMQ?]
+- [ ] *Domain Event Handeling (Sync/A-Sync with unit of work rollback) [[MediatR](https://medium.com/dotnet-hub/use-mediatr-in-asp-net-or-asp-net-core-cqrs-and-mediator-in-dotnet-how-to-use-mediatr-cqrs-aspnetcore-5076e2f2880c) or RabbitMQ?] Look at the following examples when deciding on a strategy:
   - [Ardalis Example](https://github.com/ardalis/CleanArchitecture/blob/main/src/Clean.Architecture.Core/ProjectAggregate/ToDoItem.cs): Add ToDoItemCompletedEvent from Domain Entity Behaviour
   - [Udemy Example](https://github.com/mehmetozkaya/AspnetMicroservices/tree/main/src/Services/Ordering/Ordering.Application): Add BasketCheckoutEvent during basket checkout (Looks like external ESB implimentation)
+  - [ABP Framework](https://github.com/abpframework/abp/blob/dev/framework/test/Volo.Abp.TestApp/Volo/Abp/TestApp/Domain/Person.cs): Add PersonNameChangedEvent to Domain Entity Behaviours
 - [X] *Ensure valid state - Side affects through domain events (Unit of Work Pattern, shared database context)
 - [ ] *Include basic data population (seed from repo) for local dev and unit testing (Environment configurable)
 - [ ] Ensure valid state - Use [value objects](src/Clean.Architecture.SharedKernel/ValueObject.cs) to ensure entities cannot be set in an invalid state, imutable history of values can be a subset of an entity object can have behaviors e.g. Product Code or Invoice Number that requires special formats and sequencing
@@ -55,6 +56,9 @@ git pull
 - [ ] Dependancy health check during deployment
 
 ![alt text](https://github.com/InoxicoDev/Distro.Portal.WebApplication/blob/main/Resources/Conceptual%20Architecture.png?raw=true)
+
+**Miscellaneous**
+- [ ] Relook at the Unit of Work Pattern service and repository instanciation, check if we can use the DI to inject the same DB context and manage it through configuration
 
 ## Important Resources
 - [Clean Architecture Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
