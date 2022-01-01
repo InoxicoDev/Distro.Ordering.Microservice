@@ -34,6 +34,8 @@ git pull
 - [X] *Domain Entities, Behaviors and Aggrigate Root Repositories
 - [X] *Domain Services (Entity orchestration and complex domain logic)
 - [ ] *Domain Event Handeling (Sync/A-Sync with unit of work rollback) [[MediatR](https://medium.com/dotnet-hub/use-mediatr-in-asp-net-or-asp-net-core-cqrs-and-mediator-in-dotnet-how-to-use-mediatr-cqrs-aspnetcore-5076e2f2880c) or RabbitMQ?]
+  - [Ardalis Example](https://github.com/ardalis/CleanArchitecture/blob/main/src/Clean.Architecture.Core/ProjectAggregate/ToDoItem.cs): Add ToDoItemCompletedEvent from Domain Entity Behaviour
+  - [Udemy Example](https://github.com/mehmetozkaya/AspnetMicroservices/tree/main/src/Services/Ordering/Ordering.Application): Add BasketCheckoutEvent during basket checkout (Looks like external ESB implimentation)
 - [X] *Ensure valid state - Side affects through domain events (Unit of Work Pattern, shared database context)
 - [ ] *Include basic data population (seed from repo) for local dev and unit testing (Environment configurable)
 - [ ] Ensure valid state - Use [value objects](src/Clean.Architecture.SharedKernel/ValueObject.cs) to ensure entities cannot be set in an invalid state, imutable history of values can be a subset of an entity object can have behaviors e.g. Product Code or Invoice Number that requires special formats and sequencing
@@ -43,7 +45,9 @@ git pull
 - [ ] *API Gateway orchestration of Application Services REST implimentations (Example [Envoy](https://www.envoyproxy.io/) or Ocelot)
 - [ ] *[Specification pattern](https://www.nuget.org/packages/Ardalis.Specification) implimentation (Decouple query construction from Data Access layer)
 - [ ] Data Services ([Crud Rest vs Data Streams](https://www.confluent.io/blog/data-dichotomy-rethinking-the-way-we-treat-data-and-services/))
-- [ ] Split testing into Functional, Integration and Unit Testing (Decent mocking / Stubbing capability) 
+- [ ] Split testing into Functional, Integration and Unit Testing (Decent mocking / Stubbing capability)
+- [ ] Leverage an async design for non-blocking activities
+- [ ] Rate throttling
 
 **CI/CD**
 - [ ] *Self hosted container on Linux image
