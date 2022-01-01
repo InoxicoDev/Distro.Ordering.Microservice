@@ -26,6 +26,8 @@ git pull
 - Inter Bounded Context communication (ESB)
 - Cloud logging and visualization (Assume ELK)
 
+<img src="https://github.com/InoxicoDev/Distro.Portal.WebApplication/blob/main/Resources/Conceptual%20Architecture.png?raw=true" width="600" />
+
 **Clean Architecture Design**
 - [X] *Use clean Use Case defnitions to show capability of microservice (Application Service Interfaces)
 - [X] *Ensure directional implimentation of interfaces with inner boundries unaware of outer implimentations (Onion Architecture)
@@ -54,8 +56,6 @@ git pull
 - [ ] *API Gateway orchestration of Application Services REST implimentations (Example [Envoy](https://www.envoyproxy.io/) or Ocelot)
 - [ ] *DevOps Pipeline automated deploy (Unit testing, versioning, certificate)
 - [ ] Dependancy health check during deployment
-
-![alt text](https://github.com/InoxicoDev/Distro.Portal.WebApplication/blob/main/Resources/Conceptual%20Architecture.png?raw=true)
 
 **Miscellaneous**
 - [ ] Relook at the Unit of Work Pattern service and repository instanciation, check if we can use the DI to inject the same DB context and manage it through configuration
