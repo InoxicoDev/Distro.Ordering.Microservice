@@ -4,7 +4,7 @@ This is the Ordering Microservice on the Distributed spike representing a DDD Cl
 **Guiding principals**
 - High Cohesion Lose Coupling
 - Simple things should be easy, complex things possible
-- Don't call me I will call you
+- Don't call us, we'll call you (Hollywood principle)
 
 **Setup Instructions**
 1. Clone the repository
