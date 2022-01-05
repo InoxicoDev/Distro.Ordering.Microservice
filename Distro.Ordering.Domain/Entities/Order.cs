@@ -1,7 +1,5 @@
-﻿
+﻿using Distro.Domain.Common;
 using Distro.Ordering.Domain.Behaviours;
-using Distro.Seedworks.Infrastructure.DataAccess;
-using Distro.Seedworks.Infrastructure.Domain;
 
 namespace Distro.Ordering.Domain.Entities
 {

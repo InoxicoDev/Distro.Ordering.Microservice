@@ -1,9 +1,9 @@
 ﻿using Distro.Ordering.Domain.Entities;
 using Distro.Ordering.Domain.Contracts;
 using Distro.Ordering.Domain.Behaviours;
-using Distro.Seedworks.Infrastructure.DataAccess;
 using Distro.Ordering.DataAccess;
 using Distro.Ordering.DataAccess.Repositories;
+using Distro.Ordering.Domain.Contracts.Repositories;
 
 namespace Distro.Ordering.Application.Services
 {
@@ -16,7 +16,7 @@ namespace Distro.Ordering.Application.Services
     /// </summary>
     public class OrderService : IOrderService
     {
-        private IRepository<Order> _orderRepository;
+        private IOrderRepository _orderRepository;
 
         public OrderService(ApplicationDbContext context)
         {

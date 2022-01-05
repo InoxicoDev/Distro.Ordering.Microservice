@@ -1,4 +1,6 @@
-﻿using Distro.Seedworks.Infrastructure.Domain;
+﻿
+
+using Distro.Domain.Common;
 
 namespace Distro.Ordering.Domain.ValueObjects
 {

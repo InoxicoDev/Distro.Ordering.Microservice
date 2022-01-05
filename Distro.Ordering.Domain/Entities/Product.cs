@@ -1,6 +1,5 @@
-﻿using Distro.Ordering.Domain.Behaviours;
-using Distro.Seedworks.Infrastructure.DataAccess;
-using Distro.Seedworks.Infrastructure.Domain;
+﻿using Distro.Domain.Common;
+using Distro.Ordering.Domain.Behaviours;
 
 namespace Distro.Ordering.Domain.Entities
 {

@@ -16,7 +16,7 @@ namespace Distro.Ordering.Tests.Builders
         public OrderBuilder SampleOrder()
         {
             this.Price = 15.22m;
-            this.OrderNumber = "323";
+            this.OrderNumber = "3234";
             this.DueDate = DateTime.Now.AddDays(7);
             this.IsCompleted = false;
 

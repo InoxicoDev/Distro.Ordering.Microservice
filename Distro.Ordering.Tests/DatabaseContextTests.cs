@@ -37,7 +37,7 @@ namespace Distro.Ordering.Tests
                 response = _orderRepo.Add(newOrder);
                 _context.SaveChanges();
 
-                scope.Dispose();
+                scope.Complete();
             }
 
             Assert.NotNull(response);
