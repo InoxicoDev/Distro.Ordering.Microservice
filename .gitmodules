@@ -1,3 +1,6 @@
 [submodule "Distro.Seedworks.Infrastructure"]
 	path = Distro.Seedworks.Infrastructure
 	url = https://github.com/InoxicoDev/Distro.Seedworks.Infrastructure.git
+[submodule "Distro.Domain.Common"]
+	path = Distro.Domain.Common
+	url = https://github.com/InoxicoDev/Distro.Domain.Common.git
