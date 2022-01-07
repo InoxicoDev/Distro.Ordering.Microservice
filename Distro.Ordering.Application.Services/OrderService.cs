@@ -18,9 +18,9 @@ namespace Distro.Ordering.Application.Services
     {
         private IOrderRepository _orderRepository;
 
-        public OrderService(ApplicationDbContext context)
+        public OrderService(IOrderRepository orderRepository)
         {
-            _orderRepository = new OrderRepository(context);
+            _orderRepository = orderRepository;
         }
 
         public Order AddOrder(Order order)

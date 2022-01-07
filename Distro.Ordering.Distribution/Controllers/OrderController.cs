@@ -16,9 +16,9 @@ namespace Distro.Ordering.Distribution.Controllers
 
         public LogWriter logger { get; set; }
 
-        public OrderController(ApplicationDbContext dbContext) : base(dbContext)
+        public OrderController(IOrderService orderService, ApplicationDbContext dbContext) : base(dbContext)
         {
-            _orderService = new OrderService(dbContext);
+            _orderService = orderService;
             logger = new LogWriter();
         }
 

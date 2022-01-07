@@ -1,5 +1,6 @@
 ﻿using Distro.Ordering.DataAccess;
 using System.Configuration;
+using Distro.Domain.Common;
 
 namespace Distro.Ordering.Distribution
 {
