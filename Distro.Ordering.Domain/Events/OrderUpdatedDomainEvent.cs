@@ -15,13 +15,3 @@ public class OrderUpdatedDomainEvent: IDomainEvent
 public class GetOrderNumberDomainRequest : IDomainRequest
 {
 }
-
-public class SendOrderDelayedEmailDomainCommand : IDomainCommand
-{
-    public Guid OrderId { get; }
-
-    public SendOrderDelayedEmailDomainCommand(Guid orderId)
-    {
-        OrderId = orderId;
-    }
-}

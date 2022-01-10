@@ -6,7 +6,6 @@ using Distro.Ordering.Domain.Contracts;
 using Distro.Ordering.Domain.Contracts.Repositories;
 using Distro.Ordering.Domain.Events;
 using Distro.Seedwork.Infrastructure;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,24 +26,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connecti
 // builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
 
 //Domain Publisher
-builder.Services.AddSingleton<IDomainEventDispatcher, DomainEventDispatcher>();
-
+builder.Services.AddScoped<IDomainEventDispatcher, DomainEventDispatcher>();
 builder.Services.AddTransient<IDomainEventHandler<OrderUpdatedDomainEvent>,OrderUpdatedDomainEventHandler>();
-builder.Services.AddTransient<IDomainCommandHandler<SendOrderDelayedEmailDomainCommand>, SendOrderDelayedEmailDomainCommandHandler>();
 builder.Services.AddTransient<IDomainRequestHandler<GetOrderNumberDomainRequest, string>, GetOrderNumberDomainRequestHandler>();
 
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 
+
 var app = builder.Build();
 
-DomainEventPublisher.SetInstance(app.Services.GetRequiredService<IDomainEventDispatcher>());
-
-/*app.Use(async (context, next) =>
-{
-    DomainEventPublisher.SetInstance(context.RequestServices.GetRequiredService<IDomainEventDispatcher>());
-    await next.Invoke();
-});*/
+//DomainEventPublisher.SetInstance(app.Services.GetRequiredService<IDomainEventDispatcher>());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -58,5 +50,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMiddleware<DomainEventDispatcherInstantiationMiddleware>();
 
 app.Run();

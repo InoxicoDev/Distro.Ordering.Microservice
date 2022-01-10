@@ -23,11 +23,8 @@ namespace Distro.Ordering.Domain.Behaviours
             DomainEntity.OrderNumber = updatedOrder.OrderNumber;
             DomainEntity.Price = updatedOrder.Price;
             
-            //var orderNumber = DomainEventPublisher.Instance.Request<GetOrderNumberDomainRequest, string>(new GetOrderNumberDomainRequest());   
-            
-            DomainEventPublisher.Instance.Send(new SendOrderDelayedEmailDomainCommand(DomainEntity.Id));
-            
-            //DomainEventPublisher.Instance.Publish(new OrderUpdatedDomainEvent(DomainEntity.Id));
+            //var orderNumber = DomainEventPublisher.Request<GetOrderNumberDomainRequest, string>(new GetOrderNumberDomainRequest());   
+            DomainEventPublisher.Publish(new OrderUpdatedDomainEvent(DomainEntity.Id));
         }
         public void Add(Order updatedOrder)
         {
@@ -38,9 +35,6 @@ namespace Distro.Ordering.Domain.Behaviours
             if (DomainEntity.IsCompleted) throw new InvalidOperationException("Cannot delay an order that is already completed");
 
             DomainEntity.DueDate = DomainEntity.DueDate.AddDays(days);
-            
-            DomainEventPublisher.Instance.Send(new SendOrderDelayedEmailDomainCommand(DomainEntity.Id));
-
             // Raise delay event
         }
     }

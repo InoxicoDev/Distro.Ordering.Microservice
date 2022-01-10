@@ -6,30 +6,15 @@ namespace Distro.Ordering.Application.Services;
 
 public class OrderUpdatedDomainEventHandler: IDomainEventHandler<OrderUpdatedDomainEvent>
 {
-    public OrderUpdatedDomainEventHandler()
-    {
-        
-    }
-    
-    public void Handle(OrderUpdatedDomainEvent @event)
-    {
-        //Perform an operation
-    }
-}
-
-public class SendOrderDelayedEmailDomainCommandHandler: IDomainCommandHandler<SendOrderDelayedEmailDomainCommand>
-{
     private readonly IOrderRepository _orderRepository;
 
-    public SendOrderDelayedEmailDomainCommandHandler(IOrderRepository orderRepository)
+    public OrderUpdatedDomainEventHandler(IOrderRepository orderRepository)
     {
         _orderRepository = orderRepository;
     }
-
-    public void Handle(SendOrderDelayedEmailDomainCommand @event)
+    public void Handle(OrderUpdatedDomainEvent @event)
     {
-        var orders = _orderRepository.FindAll();
-        //Perform a command
+        var a = _orderRepository.FindAll();
     }
 }
 
@@ -37,9 +22,7 @@ public class GetOrderNumberDomainRequestHandler: IDomainRequestHandler<GetOrderN
 {
     public GetOrderNumberDomainRequestHandler()
     {
-        
     }
-    
     public string Handle(GetOrderNumberDomainRequest request)
     {
         return "12345";
