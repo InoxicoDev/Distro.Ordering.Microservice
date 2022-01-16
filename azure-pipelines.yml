@@ -29,7 +29,6 @@ steps:
     restoreSolution: '$(solution)'
 
 # Build the app for .NET 6 framework
-steps:
 - task: UseDotNet@2
   inputs:
     version: $(dotNetVersion)
