@@ -36,6 +36,11 @@ steps:
     version: $(dotNetVersion)
     includePreviewVersions: true
 
+- task: CmdLine@2
+  displayName: Display Source Directory Content
+  inputs:
+    script: 'tree $(Build.SourcesDirectory) /f' 
+
 # Build the Microservce
 - task: DotNetCoreCLI@2
   displayName: 'Build the project'
