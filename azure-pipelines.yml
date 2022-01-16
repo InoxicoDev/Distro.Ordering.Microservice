@@ -20,22 +20,25 @@ variables:
 steps:
 
 - checkout: self
+  displayName: 'Git Checkout, including submodules.'
   submodules: true
 
-- task: NuGetToolInstaller@1
+#- task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
+  displayName: 'Fetch NuGet dependancies.'
   inputs:
     restoreSolution: '$(solution)'
 
-# Build the app for .NET 6 framework
 - task: UseDotNet@2
+  displayName: 'Set .NET Version'
   inputs:
     version: $(dotNetVersion)
     includePreviewVersions: true
 
 # Build the Microservce
 - task: DotNetCoreCLI@2
+  displayName: 'Build the project'
   inputs:
     command: 'build' 
     projects: 'Distro.Ordering.Distribution/Distro.Ordering.Distribution.csproj'
@@ -45,6 +48,7 @@ steps:
 
 # Publish it as .NET 6 self-contained application for linux runtime
 - task: DotNetCoreCLI@2
+  displayName: 'Publish the built project'
   inputs:
     command: publish
     publishWebProjects: True
