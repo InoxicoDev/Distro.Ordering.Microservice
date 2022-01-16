@@ -43,13 +43,10 @@ steps:
 
 # Build the Microservce
 - task: DotNetCoreCLI@2
-  displayName: 'Build the project'
+  displayName: 'Build the solution'
   inputs:
     command: 'build' 
-    projects: 'Distro.Ordering.Distribution/Distro.Ordering.Distribution.csproj'
-
-#- script: dotnet build --configuration $(buildConfiguration)
-#  displayName: 'Build .NET 6 Application'
+    projects: 'Distro.Ordering.Microservice.sln'
 
 # Publish it as .NET 6 self-contained application for linux runtime
 - task: DotNetCoreCLI@2
