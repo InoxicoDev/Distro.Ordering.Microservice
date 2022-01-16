@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  distro.ordering.distribution:
+    image: ${DOCKER_REGISTRY-}distroorderingdistribution
+    build:
+      context: .
+      dockerfile: Distro.Ordering.Distribution/Dockerfile
