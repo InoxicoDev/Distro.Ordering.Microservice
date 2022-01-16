@@ -33,8 +33,15 @@ steps:
   inputs:
     version: $(dotNetVersion)
     includePreviewVersions: true
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'Build .NET 6 Application'
+
+# Build the Microservce
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build' 
+    projects: 'Distro.Ordering.Distribution/Distro.Ordering.Distribution.csproj'
+
+#- script: dotnet build --configuration $(buildConfiguration)
+#  displayName: 'Build .NET 6 Application'
 
 # Publish it as .NET 6 self-contained application for linux runtime
 - task: DotNetCoreCLI@2
