@@ -19,6 +19,12 @@ variables:
 
 steps:
 
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
 - checkout: self
   displayName: 'Git Checkout, including submodules.'
   submodules: true
@@ -28,11 +34,6 @@ steps:
   inputs:
     version: $(dotNetVersion)
     includePreviewVersions: true
-
-- task: NuGetCommand@2
-  displayName: 'NuGet Restore Packages'
-  inputs:
-    restoreSolution: '**\*.sln'
 
 - task: CmdLine@2
   displayName: Display Source Directory Content
