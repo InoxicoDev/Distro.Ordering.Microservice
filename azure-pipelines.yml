@@ -23,18 +23,18 @@ steps:
   displayName: 'Git Checkout, including submodules.'
   submodules: true
 
-#- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
-  displayName: 'Fetch NuGet dependancies.'
-  inputs:
-    restoreSolution: '$(solution)'
-
 - task: UseDotNet@2
   displayName: 'Set .NET Version'
   inputs:
     version: $(dotNetVersion)
     includePreviewVersions: true
+
+- task: NuGetCommand@2
+  displayName: 'NuGet Restore Packages'
+  inputs:
+    restoreSolution: '**\*.sln'
+    feedsToUse: config
+    nugetConfigPath: 'NuGet.config'
 
 - task: CmdLine@2
   displayName: Display Source Directory Content
