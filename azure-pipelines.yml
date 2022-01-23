@@ -45,13 +45,29 @@ steps:
   displayName: 'Build the solution'
   inputs:
     command: 'build' 
-    projects: 'Distro.Ordering.Microservice.sln'
+    projects: 'Distro.Domain.Common/Distro.Domain.Common.sln'
 
-# Publish it as .NET 6 self-contained application for linux runtime
-- task: DotNetCoreCLI@2
-  displayName: 'Publish the built project'
-  inputs:
-    command: publish
-    publishWebProjects: True
-    arguments: '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: True
+
+
+# Build the Microservce
+# - task: DotNetCoreCLI@2
+#   displayName: 'Build the solution'
+#   inputs:
+#     command: 'build' 
+#     projects: 'Distro.Ordering.Microservice.sln'
+
+# # Build the Microservce
+# - task: DotNetCoreCLI@2
+#   displayName: 'Build the solution'
+#   inputs:
+#     command: 'build' 
+#     projects: 'Distro.Ordering.Microservice.sln'
+
+# # Publish it as .NET 6 self-contained application for linux runtime
+# - task: DotNetCoreCLI@2
+#   displayName: 'Publish the built project'
+#   inputs:
+#     command: publish
+#     publishWebProjects: True
+#     arguments: '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
+#     zipAfterPublish: True
