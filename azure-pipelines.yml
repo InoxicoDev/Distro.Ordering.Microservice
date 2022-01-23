@@ -36,7 +36,7 @@ steps:
     includePreviewVersions: true
 
 - task: CmdLine@2
-  displayName: Display Source Directory Content
+  displayName: Show Build.SourcesDirectory Content
   inputs:
     script: 'tree $(Build.SourcesDirectory) /f' 
 
@@ -55,3 +55,8 @@ steps:
     publishWebProjects: True
     arguments: '--configuration $(BuildConfiguration) --framework $(dotNetFramework) --runtime $(targetRuntime) --self-contained --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
+
+- task: CmdLine@2
+  displayName: Show Publish Content
+  inputs:
+    script: 'tree $(Build.ArtifactStagingDirectory) /f' 
