@@ -43,6 +43,7 @@ git pull
 - [ ] *Include basic data population (seed from repo) for local dev and unit testing (Environment configurable)
 - [ ] Ensure valid state - Use [value objects](src/Clean.Architecture.SharedKernel/ValueObject.cs) to ensure entities cannot be set in an invalid state, imutable history of values can be a subset of an entity object can have behaviors e.g. Product Code or Invoice Number that requires special formats and sequencing
 - [ ] CQRS (Command & Query) Data Access Implimentation (Must be able to support standard repo's OR CQRS)
+- [X] *Isolate sensitive (domain rule) updates on domain entity from access in application layer i.e. domain entity exposure / value objects
 
 **General Microservice Design**
 - [ ] *[Specification pattern](https://www.nuget.org/packages/Ardalis.Specification) implimentation (Decouple query construction from Data Access layer)
