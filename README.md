@@ -1,6 +1,8 @@
 # Distro.Ordering.Microservice
 This is the Ordering Microservice on the Distributed spike representing a DDD Clean Architecture template.
 
+[![Build Status](https://dev.azure.com/inoxidev/Container%20Microservice%20(Order)/_apis/build/status/InoxicoDev.Distro.Ordering.Microservice?branchName=cicd)](https://dev.azure.com/inoxidev/Container%20Microservice%20(Order)/_build/latest?definitionId=20&branchName=cicd)
+
 **Guiding principals**
 - High Cohesion Lose Coupling
 - Simple things should be easy, complex things possible
@@ -59,7 +61,7 @@ git pull
 - [ ] Dependancy health check during deployment
 
 **Miscellaneous**
-- [ ] Relook at the Unit of Work Pattern service and repository instanciation, check if we can use the DI to inject the same DB context and manage it through configuration
+- [X] Relook at the Unit of Work Pattern service and repository instanciation, check if we can use the DI to inject the same DB context and manage it through configuration
 
 ## Important Resources
 - [Clean Architecture Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
