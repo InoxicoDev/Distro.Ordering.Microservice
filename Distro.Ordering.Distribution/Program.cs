@@ -19,6 +19,7 @@ builder.Services.AddSwaggerGen();
 
 // EF Configuration
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseInMemoryDatabase(connectionString));
 builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connectionString));
 
 // DI Configuration (Removed for not to allow for unit of work implimentation)
@@ -26,17 +27,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(connecti
 // builder.Services.AddScoped<IRepository<Order>, OrderRepository>();
 
 //Domain Publisher
-builder.Services.AddScoped<IDomainEventDispatcher, DomainEventDispatcher>();
-builder.Services.AddTransient<IDomainEventHandler<OrderUpdatedDomainEvent>,OrderUpdatedDomainEventHandler>();
+builder.Services.AddSingleton<IDomainEventDispatcher, DomainEventDispatcher>();
+builder.Services.AddTransient<IDomainEventHandler<OrderUpdatedDomainEvent>, OrderUpdatedDomainEventHandler>();
 builder.Services.AddTransient<IDomainRequestHandler<GetOrderNumberDomainRequest, string>, GetOrderNumberDomainRequestHandler>();
 
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 
-
 var app = builder.Build();
 
-//DomainEventPublisher.SetInstance(app.Services.GetRequiredService<IDomainEventDispatcher>());
+DomainEventPublisher.SetInstance(app.Services.GetRequiredService<IDomainEventDispatcher>());
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -51,6 +51,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.UseMiddleware<DomainEventDispatcherInstantiationMiddleware>();
+//app.UseMiddleware<DomainEventDispatcherInstantiationMiddleware>();
 
 app.Run();
