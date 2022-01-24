@@ -22,8 +22,8 @@ namespace Distro.Ordering.Distribution.Controllers
             logger = new LogWriter();
         }
 
-        [HttpGet("GetOrderById/{id}")]
-        public Order? GetOrderById(Guid Id)
+        [HttpGet("GetOrderById/{id:guid}")]
+        public Order? GetOrderById(Guid id)
         {
             Order? order = null;
 
@@ -32,7 +32,7 @@ namespace Distro.Ordering.Distribution.Controllers
                 using TransactionScope ts = new TransactionScope(TransactionScopeOption.Required, TransactionScopeAsyncFlowOption.Enabled);
                 logger.Info($"Test logging Controller");
 
-                order = _orderService?.GetOrderById(Id);
+                order = _orderService?.GetOrderById(id);
 
                 ts.Complete();
             }
